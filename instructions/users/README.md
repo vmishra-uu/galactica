@@ -19,7 +19,7 @@ If you are running large jobs in parallel you might want to occupy a whole compu
 
 To run e.g. serpent with low priority type: `nice -n 20 sss2 -omp 64 serpent_input_filename`
 
-Priority scale goes from 0 to 20. If you don't use `nice`, priority is automatically set to zero. Anything `nice`>0 should be used.
+Priority scale goes from 0 to 20. If you don't use `nice`, priority is automatically set to zero (highest priority). Therefore, anything `nice`>0 is advisable.
 
-`nice`<0 is reserved for root and is mostly used for system processes. Renicing is permitted for users for own processes.
+`nice`<0 is reserved for root and is mostly used for system processes. Renicing is permitted for users for their own processes i.e. one cannot renice another user's process.
 
