@@ -13,6 +13,11 @@ The first time you log in, run the command `passwordless`. After you have done t
 
 To log in to one of the compute nodes, you may use a shortcut command named the same as the node, e.g. use `adama` to log in to the adama node.
 
+## Parallelization
+
+If you're using Serpent or MCNP or a similar code that has support for faster calculations using OpenMP or MPI, you can use the following command (in case of Serpent for instance):
+`sss2 -omp N serpent_input_filename`. Here N is the number of threads you want to distribute your calculation over (one can use values like 64 or 32 here depending on the availability of threads on the node).
+
 ## Priorities
 
 If you are running large jobs in parallel you might want to occupy a whole compute node. However, doing so for an extended time could be problematic as it prevents others from running shorter calculations efficiently. If you have long calculations (i.e., extending beyond hours or even days or weeks), please run these in low priority. This is done with the `nice` command.
